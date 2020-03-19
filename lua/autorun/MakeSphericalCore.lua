@@ -29,6 +29,7 @@ function MakeSpherical.CanTool( ent )
 		or ( ent:GetClass() == "prop_ragdoll" )
 		or ( ent:GetMoveType() ~= MOVETYPE_VPHYSICS )
 		or ( SERVER && not ent:GetPhysicsObject():IsValid() ) )
+		or ( ent.ResizerOriginalOBB or ( ent.EntityMods and ent.EntityMods.advr ) )
 		
 		then return false 
 	
